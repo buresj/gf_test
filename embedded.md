@@ -24,10 +24,9 @@ The embedded exercises have to make sure about the followings:
 
 Create a bus structure where you store:
   - name of the bus
-  - capacity
   - number of seats
   - number of standing places
-NOTE: the capacity = number of seats + number of standing places.
+  - number of passengers currently on the bus
 
 ## Main
 
@@ -48,7 +47,7 @@ The number of passengers who are getting off should be passed as a parameter.
 
 ### Printing
 
-Each time these functions are called, they should print out the current capacity.
+Each time these functions are called, they should print out the current capacity (the number of free seats and standing places).
 First the passengers fill up all the seats, and then the standing places when they get on the bus.
 When they get off the bus, the standing places will be released first.
 
@@ -64,7 +63,7 @@ An Ikarus 280 has 147 standing places and 36 seats this means it can carry 183 p
 
 ### Largest capacity
 
-Create a function which takes the whole bus array as a parameter and returns the name of the bus with the largest capacity.
+Create a function which takes the whole bus array as a parameter and returns the name of the bus with the largest capacity (the number of free seats + the number of free standing places).
 
 # Vowels
 
@@ -99,7 +98,7 @@ You will use the blue user button to signal your intent to come accross.
  - Connect 2 external LED to the board!
  - Your applications should be able to state the change of the 2 LED:
     - when the green is on, the red is off, and vice versa
-    - by default, the green LED is on for 3 secons, then the red is on for 7 seconds, then this process is repeated continuously
+    - by default, the green LED is on for 3 seconds, then the red is on for 7 seconds, then this process is repeated continuously
  - If you press the user button, the length of the actual red light will be shortened. After you press it, the red light phase completes within 1 second, if it won't be longer as the original red light's end time.
  - That button press
     - has only effect to the actual red light phase
