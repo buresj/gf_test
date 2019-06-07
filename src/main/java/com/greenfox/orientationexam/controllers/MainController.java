@@ -25,7 +25,7 @@ public class MainController {
 
     @PostMapping("/order")
     public String saveOrder(@ModelAttribute Order order) {
-        orderService.save(order);
+        orderService.saveOrder(order);
         return "redirect:/order/" + order.getId();
     }
 
