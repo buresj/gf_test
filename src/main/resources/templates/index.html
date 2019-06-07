@@ -6,6 +6,32 @@
     <title>Main page - Pixam Express</title>
 </head>
 <body>
+<h1>Pixam Express</h1>
+<span><a href="/">Order<a/>
+    <a href="/statistics">Statistics<a/>
+        </span>
 <p th:text="${test}"></p>
+
+<form action="/order" method="post" th:object="${newOrder}">
+    <label for="name">Name</label>
+    <br />
+    <input id="name" type="text">
+    <br />
+    <labe for="address">Address</labe>
+    <br />
+    <input id="address" type="text">
+
+    <div th:each="t: ${pizzas}">
+        <input type="radio"
+               th:field="*{type}"
+               th:value="${t}" />
+        <label
+                th:for="${#ids.prev('type')}"
+                th:text="${t}"></label>
+    </div>
+
+</form>
+
+
 </body>
 </html>
