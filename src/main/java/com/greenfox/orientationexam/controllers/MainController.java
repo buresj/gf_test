@@ -5,9 +5,7 @@ import com.greenfox.orientationexam.models.Order;
 import com.greenfox.orientationexam.services.OrderService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,9 +38,17 @@ public class MainController {
     }
 
     @PostMapping("/order")
-    public String saveOrder(@ModelAttribute Order order){
+    public String saveOrder(@ModelAttribute Order order) {
         orderService.save(order);
-        return "redirect:/order";
+        return "redirect:/order/" + order.getId();
     }
+
+    @GetMapping("/order/{id}")
+    public String displayOrder(@PathVariable long id,
+                               Model model){
+       model.addAttribute("savedOrder", orderService.findOrderById(id));
+       return "order";
+    }
+
 
 }
