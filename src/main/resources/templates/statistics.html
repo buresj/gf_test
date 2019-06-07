@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pixam Express</title>
+</head>
+<body>
+<h1>Guest's favorite</h1>
+<ol th:each="pizza : ${topPizzas}">
+    <li th:text="${pizza}"></li>
+</ol>
+</body>
+</html>

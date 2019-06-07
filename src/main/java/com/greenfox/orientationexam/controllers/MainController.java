@@ -2,13 +2,11 @@ package com.greenfox.orientationexam.controllers;
 
 
 import com.greenfox.orientationexam.models.Order;
+import com.greenfox.orientationexam.models.Pizzas;
 import com.greenfox.orientationexam.services.OrderService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Controller
 public class MainController {
@@ -22,23 +20,15 @@ public class MainController {
     @GetMapping("/")
     public String displayMain(Model model) {
 
-        List<String> pizzaTypes = new ArrayList<>();
-        pizzaTypes.add("Margherita");
-        pizzaTypes.add("Capricciosa");
-        pizzaTypes.add("Quattro Stagioni");
-        pizzaTypes.add("Vegetariana");
-        pizzaTypes.add("Quattro Formaggiue");
-        pizzaTypes.add("Marinara");
-        pizzaTypes.add("Peperoni");
-
         model.addAttribute("newOrder", new Order());
-        model.addAttribute("pizzaTypes", pizzaTypes);
+        model.addAttribute("pizzaTypes", new Pizzas().getMenu());
 
         return "index";
     }
 
     @PostMapping("/order")
     public String saveOrder(@ModelAttribute Order order) {
+
         orderService.save(order);
         return "redirect:/order/" + order.getId();
     }
@@ -50,5 +40,9 @@ public class MainController {
        return "order";
     }
 
-
+    @GetMapping("/statistics")
+    public String displayStatistics(Model model) {
+        model.addAttribute("topPizzas", orderService.findThreeMostOrderedPizzas());
+        return "statistics";
+    }
 }

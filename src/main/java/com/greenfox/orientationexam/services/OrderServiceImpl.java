@@ -5,6 +5,7 @@ import com.greenfox.orientationexam.repositories.OrderRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collection;
 import java.util.Optional;
 
 @Service
@@ -26,4 +27,10 @@ public class OrderServiceImpl implements OrderService {
     public Optional<Order> findOrderById(long id) {
         return orderRepo.findById(id);
     }
+
+    @Override
+    public Collection<Order> findThreeMostOrderedPizzas() {
+        return orderRepo.findThreeMostOrderedPizzas();
+    }
+
 }
