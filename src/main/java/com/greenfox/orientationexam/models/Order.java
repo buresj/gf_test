@@ -1,6 +1,7 @@
 package com.greenfox.orientationexam.models;
 
 import lombok.Data;
+
 import javax.persistence.*;
 
 @Data

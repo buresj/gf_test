@@ -11,7 +11,7 @@
 <h1>Guest's favorite</h1>
 <span><a href="/">Order<a/> <a href="/statistics">Statistics</a></span>
 <ol>
-    <li th:each="pizza : ${topPizzas}" th:text="${pizza.pizza}"></li>
+    <li th:each="pizza : ${topPizzas}" th:text="${pizza}"></li>
 </ol>
 </body>
 </html>

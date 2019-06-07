@@ -4,8 +4,6 @@ import com.greenfox.orientationexam.models.Order;
 import com.greenfox.orientationexam.repositories.OrderRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
@@ -30,8 +28,7 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public List<Order> findThreeMostOrderedPizzas() {
+    public List<String> findThreeMostOrderedPizzas() {
         return orderRepo.findThreeMostOrderedPizzas();
     }
-
 }
