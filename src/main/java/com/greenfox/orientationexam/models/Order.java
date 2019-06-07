@@ -3,8 +3,10 @@ package com.greenfox.orientationexam.models;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "orders")
 public class Order {
 
     @Id

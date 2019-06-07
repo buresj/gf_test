@@ -7,24 +7,23 @@
 </head>
 <body>
 <h1>Pixam Express</h1>
-<span><a href="/">Order<a/><a href="/statistics">Statistics</a></span>
-<p th:text="${test}"></p>
+<span><a href="/">Order<a/> <a href="/statistics">Statistics</a></span>
 
 <form action="/order" method="post" th:object="${newOrder}">
     <label for="name">Name</label>
     <br />
-    <input id="name" type="text">
+    <input id="name" type="text" th:field="*{name}">
     <br />
     <labe for="address">Address</labe>
     <br />
-    <input id="address" type="text">
+    <input id="address" type="text" th:field="*{address}">
 
-    <div th:each="t: ${pizzas}">
+    <div th:each="t: ${pizzaTypes}">
         <input type="radio"
-               th:field="*{type}"
+               th:field="*{pizza}"
                th:value="${t}" />
         <label
-                th:for="${#ids.prev('type')}"
+                th:for="${#ids.prev('pizza')}"
                 th:text="${t}"></label>
     </div>
     <button type="submit">Order</button>
