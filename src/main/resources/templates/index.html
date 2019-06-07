@@ -18,13 +18,13 @@
     <br />
     <input id="address" type="text" th:field="*{address}">
 
-    <div th:each="t: ${pizzaTypes}">
+    <div th:each="type: ${pizzas}">
         <input type="radio"
                th:field="*{pizza}"
-               th:value="${t}" />
+               th:value="${type}" />
         <label
                 th:for="${#ids.prev('pizza')}"
-                th:text="${t}"></label>
+                th:text="${type}"></label>
     </div>
     <button type="submit">Order</button>
 </form>

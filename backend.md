@@ -89,3 +89,6 @@ The expected result should be the following.
 | name           | country |
 |:---------------|:--------|
 | Vászoly Vivien | Hungary |
+
+SELECT name, country FROM applicants INNER JOIN countries ON countries.id = applicants.country_id WHERE age = 40; 
+

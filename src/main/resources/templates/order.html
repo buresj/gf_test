@@ -6,15 +6,16 @@
     <title>Your order in Pixam Expres</title>
 </head>
 <body>
+<h1>Pixam Express</h1>
+<br />
 <span><a href="/">Order<a/> <a href="/statistics">Statistics</a></span>
-<br />
+<br/>
 <h2 th:text="'Your order' + '(' + ${savedOrder.get().getId()} + ')'"></h2>
-<br />
+<br/>
 <span th:text="'Name: ' + ${savedOrder.get().name}"></span>
-<br />
+<br/>
 <span th:text="'Address: ' + ${savedOrder.get().address}"></span>
-<br />
+<br/>
 <span th:text="'Pizza: ' + ${savedOrder.get().pizza}"></span>
-
 </body>
 </html>

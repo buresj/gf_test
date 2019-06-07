@@ -1,7 +1,4 @@
 package com.greenfox.orientationexam.controllers;
-
-
-import com.greenfox.orientationexam.models.Order;
 import com.greenfox.orientationexam.services.OrderService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,5 +19,4 @@ public class APIController {
     public ResponseEntity getOrder(@PathVariable long id){
         return new ResponseEntity<>(orderService.findOrderById(id).get(), HttpStatus.ACCEPTED);
     }
-
 }
