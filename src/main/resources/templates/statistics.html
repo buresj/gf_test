@@ -7,9 +7,12 @@
 </head>
 <body>
 <h1>Pixam Express</h1>
-<br />
+<span>
+    <a href="/">Order</a>
+    <a href="/statistics">Statistics</a>
+</span>
+<br/>
 <h1>Guest's favorite</h1>
-<span><a href="/">Order<a/> <a href="/statistics">Statistics</a></span>
 <ol>
     <li th:each="pizza : ${topPizzas}" th:text="${pizza}"></li>
 </ol>

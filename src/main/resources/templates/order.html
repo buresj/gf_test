@@ -7,8 +7,10 @@
 </head>
 <body>
 <h1>Pixam Express</h1>
-<br />
-<span><a href="/">Order<a/> <a href="/statistics">Statistics</a></span>
+<span>
+    <a href="/">Order</a>
+    <a href="/statistics">Statistics</a>
+</span>
 <br/>
 <h2 th:text="'Your order' + '(' + ${savedOrder.get().getId()} + ')'"></h2>
 <br/>

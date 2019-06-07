@@ -4,28 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <title>Main page - Pixam Express</title>
+    <style>
+        .radio {
+            border: solid black 1px;
+            width: 160px;
+        }
+    </style>
 </head>
 <body>
 <h1>Pixam Express</h1>
-<span><a href="/">Order<a/> <a href="/statistics">Statistics</a></span>
-
+<span>
+    <a href="/">Order</a>
+    <a href="/statistics">Statistics</a>
+</span>
+<br/>
 <form action="/order" method="post" th:object="${newOrder}">
     <label for="name">Name</label>
-    <br />
+    <br/>
     <input id="name" type="text" th:field="*{name}">
-    <br />
+    <br/>
     <labe for="address">Address</labe>
-    <br />
+    <br/>
     <input id="address" type="text" th:field="*{address}">
-
-    <div th:each="type: ${pizzas}">
-        <input type="radio"
-               th:field="*{pizza}"
-               th:value="${type}" />
-        <label
-                th:for="${#ids.prev('pizza')}"
-                th:text="${type}"></label>
+    <br/>
+    <br/>
+    <label for="menu">Menu</label>
+    <br/>
+    <div class="radio" id="menu">
+        <div th:each="type: ${pizzas}">
+            <input type="radio"
+                   th:field="*{pizza}"
+                   th:value="${type}"/>
+            <label
+                    th:for="${#ids.prev('pizza')}"
+                    th:text="${type}"></label>
+        </div>
     </div>
+    <br/>
     <button type="submit">Order</button>
 </form>
 
