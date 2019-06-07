@@ -7,10 +7,13 @@
 </head>
 <body>
 <span><a href="/">Order<a/> <a href="/statistics">Statistics</a></span>
+<br />
 <h2 th:text="'Your order' + '(' + ${savedOrder.get().getId()} + ')'"></h2>
-
+<br />
 <span th:text="'Name: ' + ${savedOrder.get().name}"></span>
+<br />
 <span th:text="'Address: ' + ${savedOrder.get().address}"></span>
+<br />
 <span th:text="'Pizza: ' + ${savedOrder.get().pizza}"></span>
 
 </body>
